@@ -27,7 +27,10 @@
     <main class="calculator">
       <div class="calculator__app">
         <section class="calculator__bill-input">
-          <h2>Bill</h2>
+          <div class="enter-number">
+            <h2>Bill</h2>
+            <label for="" class="error">Can't be Zero</label>
+          </div>
           <form>
             <input
               type="number"
@@ -46,11 +49,14 @@
             <button>15%</button>
             <button>25%</button>
             <button>50%</button>
-            <button class="custom">Custom</button>
+            <div  id="tip-custom"><input class="custom" type="number" placeholder="Custom"></div>
           </div>
         </section>
         <section class="calculator__people-input">
-          <h2>Number of People</h2>
+          <div class="enter-number">
+            <h2>Number of People</h2>
+            <label for="" class="error">Can't be Zero</label>
+          </div>
           <form>
             <input
               type="number"
@@ -62,19 +68,24 @@
           </form>
         </section>
       </div>
-      <div class="calculator__results">
-        <div class="caculator__results-tip">
-          <h2>Tip Amount</h2>
-          <p>/ person</p>
-          <div id="tip-amount">0</div>
-        </div>
-        <div class="calculator__results-total">
-          <h2>Total</h2>
-          <p>/ person</p>
-          <div id="total-amount">0</div>
-        </div>
 
-        <button id="reset-button">Reset</button>
+      <div class="calculator__result">
+        <div class="bill">
+          <div class="text">
+            <p>Tip Amount</p>
+            <p class="person">/ person</p>
+            <p>Total</p>
+            <p class="person">/ person</p>
+          </div>
+          <div class="amount">
+            <p id="tip-amount">$4.27</p>
+            <p id="total-amount">$32.79</p>
+          </div>
+        </div>
+          
+          <div class="reset">Reset</div>
+        </div>
+        
       </div>
     </main>
 
