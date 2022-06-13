@@ -1,0 +1,15 @@
+@import "_colors";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: $lightGrayishCyan;
+  color: $darkGrayishCyan;
+  font-size: 16px;
+  font-weight: 700;
+}
