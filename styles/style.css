@@ -70,7 +70,8 @@ body {
   font-size: 16px;
 }
 
-.calculator .error {
+.calculator #bill-error,
+.calculator #people-error {
   text-align: right;
   color: #e17457;
   display: none;
