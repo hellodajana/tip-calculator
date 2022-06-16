@@ -1,38 +1,41 @@
-// save input number
-
 const inputFields = document.querySelectorAll(".input-amount");
 inputFields.forEach((element) => {
-  element.addEventListener("input", handleInput);
+  element.addEventListener("input", (e) => {
+    // save input number
+    const [billInput, peopleInput] = [
+      parseFloat(document.getElementById("bill-input").value),
+      parseFloat(document.getElementById("people-input").value),
+    ];
+    tipCalc(billInput, peopleInput);
+    handleError(billInput, peopleInput);
+  });
 });
 
-const [billInput, peopleInput] = [
-  parseFloat(document.getElementById("bill-input").value),
-  parseFloat(document.getElementById("people-input").value),
-];
-
-function handleInput() {
-  //   console.log(billInput, peopleInput);
+function handleError(bill, people) {
   // if zero, add red border and display:block error
-  if (billInput < 1) {
+  if (bill < 1) {
     document.getElementById("bill-error").style.display = "block";
+  } else {
+    document.getElementById("bill-error").style.display = "none";
   }
-  if (peopleInput < 1) {
+  if (people < 1) {
     document.getElementById("people-error").style.display = "block";
+  } else {
+    document.getElementById("people-error").style.display = "none";
   }
-  tipCalc(billInput, peopleInput);
 }
 
-// calculate tip
-
 function tipCalc(bill, people) {
+  // calculate tip
   const tipValue = 20;
-  let tipAmount = (bill * tipValue) / people;
-  let totalAmount = (bill + tipAmount) / people;
-  document.getElementById("tip-amount").innerHTML = "$" + tipAmount.toFixed(2);
+  let tipAmount = bill * (tipValue / 100);
+  let tipAmountPerPerson = tipAmount / people;
+  let totalAmount = (tipAmount + bill) / people;
+  // save amount as innerHTML
+  document.getElementById("tip-amount").innerHTML =
+    "$" + tipAmountPerPerson.toFixed(2);
   document.getElementById("total-amount").innerHTML =
     "$" + totalAmount.toFixed(2);
 }
-
-// save amount as innerHTML
 
 //reset button
