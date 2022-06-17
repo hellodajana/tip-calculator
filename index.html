@@ -46,12 +46,20 @@
         <section class="calculator__tip-input">
           <h2>Select Tip %</h2>
           <div class="calculator__buttons">
-            <button>5%</button>
-            <button>10%</button>
-            <button>15%</button>
-            <button>25%</button>
-            <button>50%</button>
-            <div  id="tip-custom"><input class="custom" type="number" placeholder="Custom"></div>
+            <button class="tip-buttons">5%</button>
+            <button class="tip-buttons">10%</button>
+            <button class="tip-buttons">15%</button>
+            <button class="tip-buttons">25%</button>
+            <button class="tip-buttons">50%</button>
+            <div><input 
+              type="number"
+              id="tip-custom"
+              placeholder="Custom"
+              name="insert tip"
+              min="1"
+              onfocus="this.value=''"
+              class="custom input-amount"/>
+            </div>
           </div>
         </section>
         <section class="calculator__people-input">
@@ -87,7 +95,7 @@
           </div>
         </div>
           
-          <div class="reset">Reset</div>
+          <button id="reset-button" class="reset">Reset</button>
         </div>
         
       </div>
