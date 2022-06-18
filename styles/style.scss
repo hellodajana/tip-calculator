@@ -7,6 +7,9 @@
   top: 50px;
   left: 50%;
   transform: translate(-50%);
+  @include desktop {
+    top: 150px;
+  }
 }
 
 .calculator {
@@ -16,6 +19,8 @@
   height: 789px;
   width: 375px;
   top: 144px;
+  left: 50%;
+  transform: translate(-50%);
   @include desktop {
     top: 304px;
     left: 50%;

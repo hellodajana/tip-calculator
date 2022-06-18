@@ -21,6 +21,12 @@ body {
           transform: translate(-50%);
 }
 
+@media (min-width: 900px) {
+  .logo {
+    top: 150px;
+  }
+}
+
 .calculator {
   position: absolute;
   background-color: white;
@@ -28,6 +34,9 @@ body {
   height: 789px;
   width: 375px;
   top: 144px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
 }
 
 @media (min-width: 900px) {
