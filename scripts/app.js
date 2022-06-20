@@ -1,4 +1,6 @@
 const inputFields = document.querySelectorAll(".input-amount");
+const resetBtn = document.getElementById("reset-button");
+const tipButton = document.querySelectorAll(".tip-buttons");
 
 const [billInput, peopleInput, tipInput] = [
   parseFloat(document.getElementById("bill-input").value),
@@ -6,16 +8,28 @@ const [billInput, peopleInput, tipInput] = [
   parseFloat(document.getElementById("tip-custom").value),
 ];
 
-inputFields.forEach((element) => {
-  element.addEventListener("input", (e) => {
-    // save input number
-    tipCalc(billInput, peopleInput, tipInput);
-    handleError(billInput, peopleInput);
+// inputFields.forEach((element) => {
+//   element.addEventListener("input", (e) => {
+//     // save input number
+//     tipCalc(billInput, peopleInput, tipInput);
+//     handleError(billInput, peopleInput);
+//   });
+// });
+
+function registerEventListener(element, event, callback) {
+  return element.addEventListener(event, (e) => {
+    callback(e);
   });
-});
+}
+
+registerEventListener(inputFields, "input", tipCalc);
+registerEventListener(inputFields, "input", handleError);
+registerEventListener(resetBtn, "click", resetButton);
 
 // tip buttons
-document.querySelectorAll(".tip-buttons").forEach((element) => {
+function getTip() {}
+
+tipButton.forEach((element) => {
   element.addEventListener("click", function tipButton(event) {
     const tip = parseFloat(event.target.innerText.replace("%", ""));
     tipCalc(billInput, peopleInput, tip);
@@ -24,8 +38,8 @@ document.querySelectorAll(".tip-buttons").forEach((element) => {
 });
 
 // calculate tip
-function tipCalc(bill, people, tip) {
-  const tipAmount = bill * (tip / 100);
+function tipCalc(bill, people, callback) {
+  const tipAmount = bill * (callback / 100);
   const [tipAmountPerPerson, totalAmount] = [
     tipAmount / people,
     (tipAmount + bill) / people,
@@ -40,20 +54,19 @@ function tipCalc(bill, people, tip) {
 // if error
 function handleError(bill, people) {
   // if zero, add red border and display:block error
+  const billError = document.getElementById("bill-error");
+  const peopleError = document.getElementById("people-error");
   if (bill < 1) {
-    document.getElementById("bill-error").style.display = "block";
+    billError.style.display = "block";
   } else {
-    document.getElementById("bill-error").style.display = "none";
+    billError.style.display = "none";
   }
   if (people < 1) {
-    document.getElementById("people-error").style.display = "block";
+    peopleError.style.display = "block";
   } else {
-    document.getElementById("people-error").style.display = "none";
+    peopleError.style.display = "none";
   }
 }
-
-// reset button
-document.getElementById("reset-button").addEventListener("click", resetButton);
 
 // reset button
 function resetButton() {
