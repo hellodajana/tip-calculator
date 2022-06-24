@@ -191,7 +191,7 @@ body {
   transition: 0.5s ease-in;
 }
 
-.calculator button:active {
+.calculator button:hover {
   background-color: #26c0ab;
   color: #00494d;
   -webkit-transition: 0.5s ease-in;
