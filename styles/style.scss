@@ -90,6 +90,11 @@
       color: $veryDarkCyan;
       transition: 0.5s ease-in;
     }
+    &:active {
+      background-color: $strongCyan;
+      color: $veryDarkCyan;
+      transition: 0.5s ease-in;
+    }
   }
   & .custom {
     background-color: $veryLightGrayishCyan;

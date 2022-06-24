@@ -191,6 +191,13 @@ body {
   transition: 0.5s ease-in;
 }
 
+.calculator button:active {
+  background-color: #26c0ab;
+  color: #00494d;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
 .calculator .custom {
   background-color: #f4fafa;
   color: #5e7a7d;
