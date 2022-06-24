@@ -1,12 +1,8 @@
-// query selectors
-const inputFields = document.querySelectorAll(".input-amount");
-const resetBtn = document.getElementById("reset-button");
-const tipInput = document.getElementById("tip-custom");
-
 const [billInput, peopleInput] = [
   document.getElementById("bill-input"),
   document.getElementById("people-input"),
 ];
+const resetBtn = document.getElementById("reset-button");
 
 let bill = 0;
 let tip = 0;
@@ -62,10 +58,16 @@ function tipCalc() {
 }
 
 function printAmount(amount, element) {
-  if (amount === "" || amount === NaN || amount === "undefined") {
-    return 0;
-  } else {
+  if (bill > 0 && people > 0 && tip > 0) {
     document.getElementById(element).innerHTML = "$" + amount.toFixed(2);
+  } else if (bill > 0 && people > 0) {
+    document.getElementById(element).innerHTML = bill / people;
+  } else if (bill > 0 && tip > 0) {
+    document.getElementById(element).innerHTML = bill + tip;
+  } else if (bill > 0 && people == "") {
+    document.getElementById(element).innerHTML = bill;
+  } else {
+    document.getElementById(element).innerHTML = "0";
   }
 }
 
@@ -73,6 +75,7 @@ function resetButton() {
   bill = 0;
   people = 0;
   tip = 0;
+  const inputFields = document.querySelectorAll(".input-amount");
   inputFields.forEach((element) => (element.value = ""));
   document.getElementById("tip-amount").innerHTML = "$0.00";
   document.getElementById("total-amount").innerHTML = "$0.00";
