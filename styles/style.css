@@ -91,7 +91,7 @@ body {
 }
 
 .calculator__bill-amount {
-  background: url(/images/icon-dollar.svg) 5% no-repeat;
+  background: url(./images/icon-dollar.svg) 5% no-repeat;
   font-family: "Space Mono", monospace;
   margin-top: 6px;
   padding: 18px;
@@ -121,7 +121,7 @@ body {
 }
 
 .calculator__people-amount {
-  background: url(/images/icon-person.svg) 5% no-repeat;
+  background: url(./images/icon-person.svg) 5% no-repeat;
   font-family: "Space Mono", monospace;
   margin-top: 6px;
   padding: 18px;

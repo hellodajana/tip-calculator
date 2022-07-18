@@ -55,11 +55,11 @@
     margin-bottom: 32px;
   }
   &__bill-amount {
-    background: url(/images/icon-dollar.svg) 5% no-repeat;
+    background: url(./images/icon-dollar.svg) 5% no-repeat;
     @include input-box;
   }
   &__people-amount {
-    background: url(/images/icon-person.svg) 5% no-repeat;
+    background: url(./images/icon-person.svg) 5% no-repeat;
     @include input-box;
   }
   &__buttons {
