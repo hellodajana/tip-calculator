@@ -26,3 +26,17 @@ Users should be able to:
 ### Links
 
 - Live Site URL: [Link](https://hellodajana-todo-app.netlify.app/)
+
+### Getting Started
+
+First install your dependencies.
+
+```
+npm install
+```
+
+To start the server, run the following command.
+
+```
+npm start
+```
