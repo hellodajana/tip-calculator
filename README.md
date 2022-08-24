@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Link](https://hellodajana-todo-app.netlify.app/)
+- Live Site URL: [Link](https://hellodajana-tip-calc.netlify.app)
 
 ### Getting Started
 
