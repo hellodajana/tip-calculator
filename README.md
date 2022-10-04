@@ -29,13 +29,13 @@ Users should be able to:
 
 ### Getting Started
 
-First install your dependencies.
+First install your dependencies:
 
 ```
 npm install
 ```
 
-To start the server, run the following command.
+To start the server, run the following command:
 
 ```
 npm start
